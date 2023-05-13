@@ -22,32 +22,20 @@
 int main(void)
 {
 pid_t pid;
-char *token;
-char **str;
+char *token, **str;
 int i;
 size_t size = 0;
 ssize_t num_char_to_read;
 char *c = NULL;
-while (1)
+do
 {
-
 printf("#cisfun$ ");
 num_char_to_read = getline(&c, &size, stdin);
 if (num_char_to_read == -1)
 {
-if (feof(stdin))
-{
-/*printf("\nEnd of file. Exiting...\n");*/
-exit(EXIT_SUCCESS);
-}
-else
-{
-perror("getline");
-exit(EXIT_FAILURE);
-}
+return (-1);
 }
 c[num_char_to_read - 1] = '\0';
-/*create peocess*/
 i = 0;
 pid = fork();
 str = malloc(sizeof(char *));
@@ -60,7 +48,7 @@ token = strtok(NULL, " ");
 }
 str[i] = NULL;
 if (pid == -1)
-perror("fork");
+    perror("fork");
 else if (pid == 0)
 {
 if (execvp(str[0], str) == -1)
@@ -75,7 +63,6 @@ int j;
 waitpid(pid, &j, 0);
 }
 free(str);
-}
+} while (1);
 free(c);
-exit(EXIT_SUCCESS);
 }

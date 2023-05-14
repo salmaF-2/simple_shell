@@ -1,5 +1,4 @@
 #include "header.h"
-
 /*Functions used :*/
 
 /* feof :check if the current position is at the end of the file or not.*/
@@ -12,11 +11,9 @@
 
 /* free : frees a dynamically allocated block of memory in the heap*/
 
-
 /*
  * main - a UNIX command line interpreter.
- *
- * Return : always 0.
+ * Return : always 0
 */
 
 int main(void)
@@ -48,7 +45,7 @@ token = strtok(NULL, " ");
 }
 str[i] = NULL;
 if (pid == -1)
-    perror("fork");
+perror("fork");
 else if (pid == 0)
 {
 if (execvp(str[0], str) == -1)
@@ -63,6 +60,7 @@ int j;
 waitpid(pid, &j, 0);
 }
 free(str);
-} while (1);
+}
+while (1);
 free(c);
 }

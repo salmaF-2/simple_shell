@@ -5,12 +5,9 @@
  */
 void b_env(char *string)
 {
+char **E = environment;
+int i;
 (void)string;
-char **E;
-**E = environment; /*copy of global environment array*/
-while (*E)
-{
-printf("%s\n", *E);
-E++;
-}
+for (i = 0; E[i] != NULL; i++)
+printf("%s\n", E[i]);
 }

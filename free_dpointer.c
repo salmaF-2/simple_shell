@@ -5,9 +5,8 @@
  */
 void free_dptr(char **to_be_freed)
 {
-    char **tmp = to_be_freed;
-
-    while (*tmp)
-        free(*tmp++);
-    free(to_be_freed);
+char **tmp = to_be_freed;
+while (*tmp)
+free(*tmp++);
+free(to_be_freed);
 }

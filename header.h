@@ -20,13 +20,12 @@ typedef struct built_d
 	void (*p)(char *);
 } built_t;
 
-extern char **environment; /*global environment array*/
+extern char **environment;
 void (*_built_in(int num, ...))(char *func);
 int check_builtin(char **cmd, char *input);
 void b_exit(char *input);
 void b_cd(char *arguments);
 void b_env(char *string);
 void free_dptr(char **to_be_freed);
-char **tokenize(char *, char *);
-void free_tokens(char **);
+char **tokenize(char *str, char *delimiter);
 #endif

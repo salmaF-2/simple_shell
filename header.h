@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <stdarg.h>
+#include <sys/types.h>
+#include <stddef.h>
 
 
 /**
@@ -19,7 +21,11 @@ typedef struct built_d
 	char *b;
 	void (*p)(char *);
 } built_t;
-
+/*--------function used for task1--------*/
+void execute_prg(char **cmd, int *j, char **av);
+void _execute(char *cmd, char *av);
+void _strtok(char *string, char *separator, char **arg);
+/*-------------------------------------------------------*/
 extern char **environment; /*global environment array*/
 void (*_built_in(int num, ...))(char *func);
 int check_builtin(char **cmd, char *input);

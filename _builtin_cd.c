@@ -14,5 +14,5 @@ else if (chdir(args[1]) != 0)
 {
 perror("chdir");
 }
-free_tokens(args);
+free_dptr(args);
 }

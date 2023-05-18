@@ -1,4 +1,4 @@
-#include "../header.h"
+#include "header.h"
 
 /* fork() : create a new process.*/
 /* perror() : This function displays the error message.*/
@@ -15,7 +15,7 @@
  */
 /*execve() : Execute an executable path with arguments*/
 
-/*
+/**
  * execute_prg - executing a program.
  * Description: executing a program.
  * @cmd: executable file path.
@@ -27,7 +27,6 @@ void execute_prg(char **cmd, int *j, char **av)
 {
 
 pid_t pid;
-pid = fork();
 if (strcmp(cmd[0], "env") == 0)
 {
 char **env = environ;
@@ -38,6 +37,7 @@ env++;
 }
 return;
 }
+pid = fork();
 if (pid == -1)
 {
 perror("fork");

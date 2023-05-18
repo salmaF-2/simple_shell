@@ -1,4 +1,4 @@
-#include "../header.h"
+#include "header.h"
 
 /* fflush() : flush the output buffer of the stream.*/
 

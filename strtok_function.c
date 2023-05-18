@@ -1,8 +1,4 @@
-
-#include "../header.h"
-
-
-
+#include "header.h"
 /**
  * _strtok - allows you to extract all the tokens from a string.
  * To control what is to be extracted, you must specify the set
@@ -14,22 +10,16 @@
  *
  * Return: void
  */
-
 void _strtok(char *string, char *separator, char **arg)
 {
-
 int i = 0;
-
 char *str = strtok(string, separator);
-
 while (str != NULL)
 {
 *(arg + i) = str;
 str = strtok(NULL, separator);
 i++;
 }
-
 *(arg + i) = NULL;
-
 return;
 }

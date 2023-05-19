@@ -10,6 +10,8 @@
 #include <sys/types.h>
 #include <stddef.h>
 
+#define MAXIMUM1 50
+#define MAXIMUM2 10
 
 /**
  * struct built_d - def the built-in functions.
@@ -27,6 +29,12 @@ void execute_prg(char **cmd, int *j, char **av);
 void _execute(char *cmd, char *av);
 void _strtok(char *string, char *separator, char **arg);
 /*-------------------------------------------------------*/
+
+
+/*--------functions used for task3----------------*/
+void task3_test(pid_t pid, int s, char **strings);
+/*------------------------------------------------*/
+
 
 
 extern char **environment;

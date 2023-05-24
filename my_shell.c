@@ -40,5 +40,5 @@ return (0);
  */
 void displayPrompt(void)
 {
-printf("\n#cisfun$ ");
+printf("#cisfun$ ");
 }

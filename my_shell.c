@@ -9,12 +9,9 @@ int main(void)
 char input[MAX_INPUT_LENGTH];
 char **args;
 int status;
-int firstIteration = 1;
+displayPrompt();
 while (1)
 {
-if (!firstIteration)
-displayPrompt();
-firstIteration = 0;
 if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL)
 {
 printf("\n");
@@ -31,7 +28,9 @@ status = executeCommand(args);
 freeMemory(args);
 if (status == -1)
 break;
+displayPrompt();
 }
+printf("\n");
 return (0);
 }
 

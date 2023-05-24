@@ -9,9 +9,12 @@ int main(void)
 char input[MAX_INPUT_LENGTH];
 char **args;
 int status;
+int firstIteration = 1;
 while (1)
 {
+if (!firstIteration)
 displayPrompt();
+firstIteration = 0;
 if (fgets(input, MAX_INPUT_LENGTH, stdin) == NULL)
 {
 printf("\n");
@@ -37,5 +40,5 @@ return (0);
  */
 void displayPrompt(void)
 {
-printf("#cisfun$ ");
+printf("\n#cisfun$ ");
 }

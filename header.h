@@ -36,7 +36,7 @@ void task3_test(pid_t pid, int s, char **strings);
 
 
 
-extern char **environment;
+extern char **environ;
 
 /*-----------------*/
 void b_exit(void);

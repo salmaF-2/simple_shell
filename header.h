@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef HEADER_H
 #define HEADER_H
 
@@ -60,3 +61,11 @@ void _execerror(char *, int, char *);
 
 #endif /* HEADER_H */
 
+=======
+/* function for buildins*/
+void _cd(char *cmd);
+void _env(attribute((unused))char *cmd);
+void _exit(char *cmd);
+void (find_buildin_s(charstr))(char *str);
+int _buildins2(char *line, charcmd);
+>>>>>>> d0ace87956c0a118d2aabc0db46a51e10040b121

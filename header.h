@@ -22,6 +22,13 @@ extern char **environ;
 /* ----------------exit with arguments---------------------*/
 void exit_function(char **argv, char **arguments, char *string,
 int index, int *errors, int *status);
+void handleNoArguments(int *errors, int *status,
+char **arguments, char *string);
+void handleNumericArgument(char *programName, char **arguments,
+int index, int *errors);
+void handleInvalidArgument(char *programName, char **arguments,
+int index, int *errors);
+void cleanupAndExit(int exitStatus, char **arguments, char *string);
 /* --------   -----function free----------------------------*/
 void _free_function(char **arguments);
 /* -----------print environment variables-------------------*/
@@ -49,4 +56,7 @@ void rev_str(char *s, int len);
 char *f_cvint(int num);
 int f_atoi(char *s);
 int f_digit(char *s);
+int countDigits(int num);
+int extractDigits(int num, char *s);
+
 #endif

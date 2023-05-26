@@ -1,79 +1,54 @@
-#include "main.h"
-
-char *int_to_str(int num);
-
+#include "header.h"
 /**
- * reverse_string - a function that reverse a string
- * @str: the given string
- * @length: the length of the string
- *
- * Return: void.
+ * f_cvint - converts a interger to a string
+ * @num: integer
+ * Return: a pointer to string.
  */
-
-void reverse_string(char *str, int length)
+char *f_cvint(int num)
 {
-	char temp;
-	int end, start = 0;
-
-	end = length - 1;
-	while (start < end)
-	{
-		temp = str[start];
-		str[start] = str[end];
-		str[end] = temp;
-		start++;
-		end--;
-	}
+char *s;
+int _negative;
+int len;
+int digit;
+int index;
+int temp;
+if (num == 0)
+{
+s = (char *) malloc(2 * sizeof(char));
+s[0] = '0';
+s[1] = '\0';
+return (s);
 }
-
-/**
- * int_to_str - a function converts a interger to a string
- * @num: the given integer
- *
- * Return: a pointer to the string.
- */
-char *int_to_str(int num)
+_negative = 0;
+len = 0;
+if (num < 0)
 {
-	char *str;
-	int is_negative, length, digit, index, temp;
-
-	if (num == 0)
-	{
-		str = (char *) malloc(2 * sizeof(char));
-		str[0] = '0';
-		str[1] = '\0';
-		return (str);
-	}
-	is_negative = 0;
-	length = 0;
-	if (num < 0)
-	{
-		is_negative = 1;
-		num = -num;
-	}
-	temp = num;
-	while (temp > 0)
-	{
-		temp = temp / 10;
-		length++;
-	}
-	if (is_negative)
-	{
-		length++;
-	}
-	str = (char *) malloc((length + 1) * sizeof(char));
-	index = 0;
-	while (num > 0)
-	{
-		digit = num % 10;
-		str[index++] = digit + '0';
-		num = num / 10;
-	}
-	if (is_negative)
-	{
-		str[index++] = '-';
-	}
-	str[index] = '\0';
-	reverse_string(str, index);
-	return (str);
+_negative = 1;
+num = -num;
+}
+temp = num;
+while (temp > 0)
+{
+temp = temp / 10;
+len++;
+}
+if (_negative)
+{
+len++;
+}
+s = (char *) malloc((len + 1) * sizeof(char));
+index = 0;
+while (num > 0)
+{
+digit = num % 10;
+s[index++] = digit + '0';
+num = num / 10;
+}
+if (_negative)
+{
+s[index++] = '-';
+}
+s[index] = '\0';
+rev_str(s, index);
+return (s);
 }

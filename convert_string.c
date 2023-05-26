@@ -33,5 +33,5 @@ break;
 else
 continue;
 }
-return (num * sg);
+return (num *sg);
 }

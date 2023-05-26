@@ -7,11 +7,7 @@
 char *f_cvint(int num)
 {
 char *s;
-int _negative;
-int len;
-int digit;
-int index;
-int temp;
+int _negative, len, digit, index, temp;
 if (num == 0)
 {
 s = (char *) malloc(2 * sizeof(char));

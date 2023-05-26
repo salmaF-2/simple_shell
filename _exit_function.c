@@ -54,7 +54,7 @@ exit(k);
 }
 else
 {
-exit_error(argv[0], arguments, index);
+exit_function_errors(argv[0], arguments, index);
 *errors = 2;
 }
 _free_function(arguments);

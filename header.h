@@ -48,5 +48,5 @@ int f_strncmp(char *s1, char *s2, size_t n);
 void rev_str(char *s, int len);
 char *f_cvint(int num);
 int f_atoi(char *s);
-int f_digit(char *s)
+int f_digit(char *s);
 #endif
